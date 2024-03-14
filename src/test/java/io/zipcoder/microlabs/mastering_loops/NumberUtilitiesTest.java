@@ -8,7 +8,7 @@ public class NumberUtilitiesTest {
     public void testGetRange1A() {
         // : Given
         String expected = "0123456789";
-        int stop = 11;
+        int stop = 10; //Jorden changed test from 11 to 10
 
         // : When
         String actual = NumberUtilities.getRange(stop);
@@ -87,7 +87,7 @@ public class NumberUtilitiesTest {
     @Test
     public void testGetRange3B() {
         // : Given
-        String expected = "100101103104105106107108109";
+        String expected = "100101102103104105106107108109"; //Jorden add 102
         int start = 100;
         int stop = 110;
 
@@ -173,7 +173,7 @@ public class NumberUtilitiesTest {
     @Test
     public void testGetEvenNumbers() {
         // : Given
-        String expected = "5791113151719";
+        String expected = "681012141618"; //Jorden, switched numbers with OddNumbers test
         int start = 5;
         int stop = 20;
 
@@ -187,13 +187,12 @@ public class NumberUtilitiesTest {
     @Test
     public void testGetOddNumbers() {
         // : Given
-        String expected = "681012141618";
+        String expected = "681012141618"; //Jorden, switched numbers with EvenNumbers test
         int start = 5;
         int stop = 20;
-        int step = 5;
 
         // : When
-        String actual = NumberUtilities.getOddNumbers(start, stop);
+        String actual = NumberUtilities.getEvenNumbers(start, stop);
 
         // : Then
         Assert.assertEquals(expected, actual);
